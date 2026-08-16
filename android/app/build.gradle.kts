@@ -352,3 +352,8 @@ dependencies {
     androidTestImplementation(libs.compose.ui.test.junit4)
     debugImplementation(libs.compose.ui.test.manifest)
 }
+tasks.configureEach {  
+    if (name.startsWith("kapt")) {  
+        enabled = false  
+    }  
+}
