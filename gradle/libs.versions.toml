@@ -117,6 +117,7 @@ picovoice-eagle = { group = "ai.picovoice", name = "eagle-android", version.ref 
 
 # --- ObjectBox (Vector DB) ---
 objectbox-android = { group = "io.objectbox", name = "objectbox-android", version.ref = "objectbox" }
+objectbox-processor = { group = "io.objectbox", name = "objectbox-processor", version.ref = "objectbox" }
 
 # --- Biometric ---
 biometric = { group = "androidx.biometric", name = "biometric", version.ref = "biometric" }

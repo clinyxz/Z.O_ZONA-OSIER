@@ -274,6 +274,7 @@ dependencies {
     // OBJECTBOX — Vector DB on-device, Apache 2.0, HNSW sejak v4.0
     // ============================================================
     implementation(libs.objectbox.android)
+    ksp(libs.objectbox.processor)
 
     // ============================================================
     // SHIZUKU — MIT License, Maven Central
