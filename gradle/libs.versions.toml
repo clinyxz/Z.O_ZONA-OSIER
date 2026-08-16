@@ -1,0 +1,166 @@
+# ============================================================
+# ZONA-OSIER — Version Catalog
+# Semua versi dependency terpusat di sini.
+# Diverifikasi Agustus 2026.
+# ============================================================
+
+[versions]
+# --- Build Tools ---
+agp = "8.7.3"
+kotlin = "2.0.21"
+ksp = "2.0.21-1.0.28"
+compose-bom = "2024.12.01"
+
+# --- Core ---
+coroutines = "1.9.0"
+serialization-json = "1.7.3"
+lifecycle = "2.8.7"
+activity-compose = "1.9.3"
+
+# --- Room (Database) ---
+room = "2.6.1"
+
+# --- Shizuku (System-level akses tanpa root) ---
+shizuku = "13.1.5"
+
+# --- Voice ---
+android-vad = "2.0.2"           # Silero VAD via JitPack
+vosk = "0.3.45"                  # STT on-device
+picovoice-eagle = "1.0.2"       # Voice-print speaker recognition
+
+# --- Vector DB ---
+objectbox = "4.0.3"
+
+# --- Biometric ---
+biometric = "1.1.0"
+
+# --- Health Connect ---
+health-connect = "1.1.0"
+
+# --- Camera + ML Kit ---
+camera = "1.4.0"
+mlkit-face = "17.1.0"
+
+# --- Network ---
+okhttp = "4.12.0"
+retrofit = "2.11.0"
+retrofit-kotlinx = "1.0.0"
+
+# --- Git (GitHub-as-Cloud) ---
+jgit = "7.1.0"
+
+# --- JSON ---
+gson = "2.11.0"
+
+# --- Navigation Compose ---
+navigation-compose = "2.8.5"
+
+# --- DataStore (Preferences) ---
+datastore = "1.1.1"
+
+# --- Core KTX ---
+core-ktx = "1.15.0"
+
+# --- Material3 ---
+
+# --- Testing ---
+junit = "4.13.2"
+junit-ext = "1.2.1"
+espresso = "3.6.1"
+mockk = "1.13.14"
+turbine = "1.2.0"
+
+# --- Crypto (untuk enkripsi memori) ---
+crypto = "1.1.0-alpha06"
+
+[libraries]
+# --- Core ---
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "coroutines" }
+serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization-json" }
+
+# --- Lifecycle ---
+lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+
+# --- Activity & Compose ---
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-material-icons = { group = "androidx.compose.material", name = "material-icons-extended" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+
+# --- Navigation ---
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
+
+# --- Room ---
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+# --- Shizuku ---
+shizuku-api = { group = "dev.rikka.shizuku", name = "api", version.ref = "shizuku" }
+shizuku-provider = { group = "dev.rikka.shizuku", name = "provider", version.ref = "shizuku" }
+
+# --- Voice ---
+android-vad = { group = "com.github.gkonovalov.android-vad", name = "silero", version.ref = "android-vad" }
+vosk-android = { group = "com.alphacephei", name = "vosk-android", version.ref = "vosk" }
+picovoice-eagle = { group = "ai.picovoice", name = "eagle", version.ref = "picovoice-eagle" }
+
+# --- ObjectBox (Vector DB) ---
+objectbox-android = { group = "io.objectbox", name = "objectbox-android", version.ref = "objectbox" }
+
+# --- Biometric ---
+biometric = { group = "androidx.biometric", name = "biometric", version.ref = "biometric" }
+
+# --- Health Connect ---
+health-connect = { group = "androidx.health.connect", name = "connect-client", version.ref = "health-connect" }
+
+# --- Camera + ML Kit ---
+camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "camera" }
+camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "camera" }
+camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "camera" }
+mlkit-face = { group = "com.google.mlkit", name = "face-detection", version.ref = "mlkit-face" }
+
+# --- Network ---
+okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-kotlinx = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-kotlinx" }
+
+# --- Git ---
+jgit = { group = "org.eclipse.jgit", name = "org.eclipse.jgit", version.ref = "jgit" }
+
+# --- JSON ---
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+# --- DataStore ---
+datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+
+# --- Security Crypto ---
+crypto = { group = "androidx.security", name = "security-crypto", version.ref = "crypto" }
+
+# --- Testing ---
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+junit-ext = { group = "androidx.test.ext", name = "junit", version.ref = "junit-ext" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ZONA-OSIER — Android OS Layer Agentik
+  Manifest deklarasikan semua permission, service, provider, dan activity.
+  Diverifikasi per Agustus 2026.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ============================================ -->
+    <!-- PERMISSIONS                                  -->
+    <!-- ============================================ -->
+
+    <!-- Jaringan -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Mikrofon (VAD / STT / Voice-print) -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- SMS -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- Telepon & Call Screening -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+
+    <!-- Kalender -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <!-- Kamera (face recognition) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Lokasi -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Notifikasi (API 33+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Foreground Service (API 34+ butuh tipe spesifik) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- Storage — hanya untuk API < 33, di atas 33 pakai SAF / READ_MEDIA_IMAGES -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Bluetooth (opsional, untuk perangkat wearable terhubung) -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- ============================================ -->
+    <!-- APPLICATION                                  -->
+    <!-- ============================================ -->
+
+    <application
+        android:name=".ZonaOsierApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ZonaOsier"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:hasCode="true">
+
+        <!-- ======================================== -->
+        <!-- SHIZUKU PROVIDER                          -->
+        <!-- ======================================== -->
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:enabled="true"
+            android:exported="true"
+            android:multiprocess="false" />
+
+        <!-- ======================================== -->
+        <!-- ACCESSIBILITY SERVICE                      -->
+        <!-- Membaca layar, gesture injection            -->
+        <!-- ======================================== -->
+        <service
+            android:name=".system.ZonaAccessibilityService"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- ======================================== -->
+        <!-- CALL SCREENING SERVICE                     -->
+        <!-- ======================================== -->
+        <service
+            android:name=".system.ZonaCallScreeningService"
+            android:exported="true"
+            android:permission="android.permission.BIND_SCREENING_SERVICE">
+            <intent-filter>
+                <action android:name="android.telecom.CallScreeningService" />
+            </intent-filter>
+        </service>
+
+        <!-- ======================================== -->
+        <!-- NOTIFICATION LISTENER SERVICE              -->
+        <!-- ⚠️ Tidak bisa diaktifkan lewat runtime     -->
+        <!-- permission biasa — user harus ke Settings  -->
+        <!-- ======================================== -->
+        <service
+            android:name=".system.ZonaNotificationListenerService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!-- ======================================== -->
+        <!-- VOICE FOREGROUND SERVICE                   -->
+        <!-- Untuk VAD + STT + TTS pipeline berjalan    -->
+        <!-- di latar belakang                          -->
+        <!-- ======================================== -->
+        <service
+            android:name=".voice.VoiceForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="microphone">
+            <intent-filter>
+                <action android:name="com.zonaosier.VOICE_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <!-- ======================================== -->
+        <!-- DATA SYNC SERVICE (GitHub-as-Cloud, etc)  -->
+        <!-- ======================================== -->
+        <service
+            android:name=".memory.GitHubSyncService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+            <intent-filter>
+                <action android:name="com.zonaosier.DATA_SYNC_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <!-- ======================================== -->
+        <!-- MAIN ACTIVITY (Launcher)                   -->
+        <!-- ======================================== -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ZonaOsier"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ======================================== -->
+        <!-- CHARACTER EDITOR ACTIVITY                  -->
+        <!-- Form untuk membuat/edit karakter            -->
+        <!-- ======================================== -->
+        <activity
+            android:name=".ui.CharacterEditorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ZonaOsier"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- ======================================== -->
+        <!-- SYSTEM THINKER SERVICE                     -->
+        <!-- Background daemon untuk reasoning berat    -->
+        <!-- ======================================== -->
+        <service
+            android:name=".brain.SystemThinkerService"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

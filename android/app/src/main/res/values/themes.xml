@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ZONA-OSIER base theme.
+  Diterapkan oleh SkinEngine secara runtime via Compose.
+  Theme XML ini hanya fallback untuk splash screen.
+-->
+<resources>
+    <!-- Base theme — NoActionBar untuk Compose full-screen -->
+    <style name="Theme.ZonaOsier" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">#0D0D0F</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Color resources — overridden by SkinEngine per-theme -->
+    <color name="surface">#0D0D0F</color>
+    <color name="surface_variant">#1A1A1F</color>
+    <color name="primary">#E8C547</color>
+    <color name="primary_variant">#C9A830</color>
+    <color name="on_primary">#0D0D0F</color>
+    <color name="secondary">#47E8A0</color>
+    <color name="on_secondary">#0D0D0F</color>
+    <color name="error">#E84747</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="text_primary">#F0F0F0</color>
+    <color name="text_secondary">#A0A0A8</color>
+    <color name="border">#2A2A30</color>
+    <color name="nadi_glow">#47E8A0</color>
+    <color name="nadi_warning">#E8C547</color>
+    <color name="nadi_error">#E84747</color>
+    <color name="nadi_frozen">#8888FF</color>
+</resources>

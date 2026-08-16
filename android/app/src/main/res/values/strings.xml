@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ZONA-OSIER</string>
+
+    <!-- Permissions -->
+    <string name="permission_rationale_mic">Mikrofon diperlukan untuk mendengarkan perintah suara dan voice-print.</string>
+    <string name="permission_rationale_sms">Izin SMS diperlukan untuk mengirim dan membaca pesan atas perintah Anda.</string>
+    <string name="permission_rationale_phone">Izin telepon diperlukan untuk screening panggilan masuk.</string>
+    <string name="permission_rationale_calendar">Izin kalender diperlukan untuk membuat dan membaca acara.</string>
+    <string name="permission_rationale_camera">Izin kamera diperlukan untuk face recognition.</string>
+    <string name="permission_rationale_location">Izin lokasi diperlukan untuk konteks situasional.</string>
+    <string name="permission_rationale_notifications">Izin notifikasi diperlukan untuk membaca dan merespons notifikasi.</string>
+
+    <!-- Security -->
+    <string name="biometric_prompt_title">Konfirmasi Aksi</string>
+    <string name="biometric_prompt_subtitle">Aksi ini memerlukan verifikasi biometrik</string>
+    <string name="biometric_prompt_cancel">Batal</string>
+    <string name="freeze_agent_title">Freeze Agent</string>
+    <string name="freeze_agent_confirm">Membekukan semua akses elevated (Shizuku, Termux, Accessibility, SMS, Kamera)?</string>
+    <string name="unfreeze_agent_confirm">Mengembalikan semua akses elevated?</string>
+
+    <!-- Voice -->
+    <string name="voice_state_listening">Mendengarkan…</string>
+    <string name="voice_state_thinking">Berpikir…</string>
+    <string name="voice_state_speaking">Berbicara…</string>
+    <string name="voice_state_processing">Memproses…</string>
+    <string name="voice_state_idle">Siap</string>
+    <string name="voice_state_frozen">DIBEKUKAN</string>
+    <string name="voice_state_error">Error</string>
+
+    <!-- Character -->
+    <string name="character_drawer_title">Karakter</string>
+    <string name="character_create_new">Buat Karakter Baru</string>
+    <string name="character_import">Impor Karakter</string>
+    <string name="character_export">Ekspor Karakter</string>
+    <string name="character_delete_confirm">Hapus karakter ini? Tindakan tidak dapat dibatalkan.</string>
+    <string name="character_activate">Aktifkan</string>
+    <string name="character_deactivate">Nonaktifkan</string>
+
+    <!-- Model Tiers -->
+    <string name="tier_adhi">Adhi</string>
+    <string name="tier_madya">Madya</string>
+    <string name="tier_alit">Alit</string>
+
+    <!-- Skins -->
+    <string name="skin_sunyata">Sunyata</string>
+    <string name="skin_embun">Embun</string>
+    <string name="skin_denyut">Denyut</string>
+    <string name="skin_cakra">Cakra</string>
+
+    <!-- Providers -->
+    <string name="provider_groq">Groq</string>
+    <string name="provider_openrouter">OpenRouter</string>
+    <string name="provider_google_ai">Google AI Studio</string>
+    <string name="provider_deepseek">DeepSeek</string>
+    <string name="provider_cerebras">Cerebras</string>
+    <string name="provider_sambanova">SambaNova</string>
+    <string name="provider_novita">Novita AI</string>
+    <string name="provider_mistral">Mistral</string>
+    <string name="provider_cloudflare">Cloudflare</string>
+    <string name="provider_cohere">Cohere</string>
+    <string name="provider_huggingface">HuggingFace</string>
+    <string name="provider_nvidia">NVIDIA NIM</string>
+    <string name="provider_local">Model Lokal</string>
+
+    <!-- Memory -->
+    <string name="memory_timeline">Timeline Memori</string>
+    <string name="memory_sync_now">Sinkronkan Sekarang</string>
+    <string name="memory_sync_success">Sinkronisasi berhasil</string>
+    <string name="memory_sync_error">Gagal menyinkronkan: %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_api_keys">Kunci API</string>
+    <string name="settings_voice">Suara</string>
+    <string name="settings_security">Keamanan</string>
+    <string name="settings_model">Model AI</string>
+    <string name="settings_memory">Memori</string>
+    <string name="settings_about">Tentang</string>
+    <string name="settings_skin">Tema Tampilan</string>
+
+    <!-- TTS Engines -->
+    <string name="tts_minimax">MiniMax (Premium)</string>
+    <string name="tts_elevenlabs">ElevenLabs</string>
+    <string name="tts_local">Suara Lokal (sherpa-onnx)</string>
+
+    <!-- STT Engines -->
+    <string name="stt_vosk">Vosk On-Device</string>
+    <string name="stt_google_cloud">Google Cloud STT</string>
+    <string name="stt_hybrid">Hybrid (Vosk + Fallback)</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome">Selamat datang di ZONA-OSIER</string>
+    <string name="onboarding_shizuku_step">Pasang Shizuku (sideload dari GitHub/F-Droid, bukan Play Store untuk Android 16)</string>
+    <string name="onboarding_termux_step">Pastikan Termux (F-Droid) dan Termux:API terinstal</string>
+    <string name="onboarding_notification_step">Aktifkan akses notifikasi di pengaturan sistem</string>
+    <string name="onboarding_api_step">Konfigurasi minimal satu provider API</string>
+    <string name="onboarding_complete">Siap digunakan</string>
+
+    <!-- Errors -->
+    <string name="error_no_active_character">Tidak ada karakter aktif. Pilih atau buat karakter terlebih dahulu.</string>
+    <string name="error_provider_unavailable">Provider %1$s tidak tersedia.</string>
+    <string name="error_quota_exceeded">Kuota %1$s habis. Membuka fallback…</string>
+    <string name="error_model_load_failed">Gagal memuat model: %1$s</string>
+    <string name="error_network_offline">Tidak ada koneksi internet. Mode offline aktif.</string>
+    <string name="error_tts_init_failed">Gagal menginisialisasi TTS: %1$s</string>
+    <string name="error_stt_init_failed">Gagal menginisialisasi STT: %1$s</string>
+    <string name="error_character_parse_failed">Gagal mem-parse file karakter: %1$s</string>
+    <string name="error_tool_not_allowed">Tool \&apos;%1$s\&apos; tidak diizinkan oleh kebijakan karakter ini.</string>
+    <string name="error_shell_rejected">Perintah shell ditolak: %1$s</string>
+    <string name="error_biometric_failed">Verifikasi biometrik gagal atau dibatalkan.</string>
+    <string name="error_frozen">Agent dalam keadaan dibekukan. Unfreeze terlebih dahulu.</string>
+</resources><string name="accessibility_service_description">ZONA-OSIER membaca layar dan mengeksekusi gesture atas perintah suara Anda.</string>

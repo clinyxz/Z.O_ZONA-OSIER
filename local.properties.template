@@ -1,0 +1,93 @@
+# ============================================
+# ZONA-OSIER — Konfigurasi API Keys
+# Copy file ini menjadi "local.properties" dan isi nilai Anda.
+# File ini TIDAK di-commit ke Git (sudah di .gitignore).
+# ============================================
+
+# --- LLM Provider API Keys ---
+
+# Groq (https://console.groq.com) — free tier tersedia
+GROQ_API_KEY=gsk_your_key_here
+
+# OpenRouter (https://openrouter.ai) — free models tersedia
+OPENROUTER_API_KEY=sk-or-your_key_here
+
+# Google AI Studio (https://aistudio.google.com) — free tier 250 RPD
+GOOGLE_AI_API_KEY=your_key_here
+
+# DeepSeek (https://platform.deepseek.com) — 5 juta token / 30 hari (TRIAL TERBATAS)
+DEEPSEEK_API_KEY=your_key_here
+# ⚠️ WAJIB track timer expiry — otomatis nonaktif setelah 30 hari
+DEEPSEEK_EXPIRY_TIMESTAMP=0
+
+# Cerebras (https://cloud.cerebras.ai) — $5 credit / 30 hari (TRIAL TERBATAS)
+CEREBRAS_API_KEY=your_key_here
+# ⚠️ WAJIB track timer expiry — otomatis nonaktif setelah 30 hari
+CEREBRAS_EXPIRY_TIMESTAMP=0
+
+# SambaNova (https://sambanova.ai) — $5 credit / 30 hari (TRIAL TERBATAS)
+SAMBA_NOVA_API_KEY=your_key_here
+# ⚠️ WAJIB track timer expiry — otomatis nonaktif setelah 30 hari
+SAMBA_NOVA_EXPIRY_TIMESTAMP=0
+
+# Novita AI (https://novita.ai) — free tier tersedia
+NOVITA_API_KEY=your_key_here
+
+# Mistral (https://mistral.ai) — free tier tersedia
+MISTRAL_API_KEY=your_key_here
+
+# Cloudflare AI Workers (https://developers.cloudflare.com/workers-ai/)
+CLOUDFLARE_API_KEY=your_key_here
+CLOUDFLARE_ACCOUNT_ID=your_account_id_here
+
+# Cohere (https://cohere.com) — trial tier
+COHERE_API_KEY=your_key_here
+
+# Hugging Face (https://huggingface.co) — free inference API
+HUGGINGFACE_API_KEY=hf_your_key_here
+
+# NVIDIA NIM (https://build.nvidia.com)
+NVIDIA_API_KEY=nvapi-your_key_here
+
+# --- TTS Provider API Keys ---
+
+# ElevenLabs (https://elevenlabs.io) — free tier: 10.000 karakter/bulan
+ELEVENLABS_API_KEY=your_key_here
+
+# MiniMax Audio (https://www.minimaxi.com) — BERBAYAR, cek kredit sebelum routing
+MINIMAX_API_KEY=your_key_here
+# ⚠️ MiniMax adalah layanan PREMIUM. VoiceRouter memeriksa kredit sebelum routing.
+# Jika kredit habis, otomatis fallback ke ElevenLabs → TTS Lokal.
+
+# --- STT Cloud ---
+
+# Google Cloud Speech-to-Text (fallback dari Vosk on-device)
+# Buat service account key dan letakkan di: android/app/src/main/raw/google-stt-key.json
+# Atau set env var:
+GOOGLE_CLOUD_STT_KEY_PATH=google-stt-key.json
+
+# --- Voice-Print ---
+
+# Picovoice Eagle (https://picovoice.ai) — free: 3 active users/bulan
+# ⚠️ Fallback ke BiometricPrompt selalu wajib — voice-print BUKAN single point of failure
+PICOVOICE_ACCESS_KEY=your_access_key_here
+
+# --- GitHub-as-Cloud (opsional) ---
+
+# Token akses repo privat untuk sinkronisasi memori.
+# Cukup repo read+write scope.
+GITHUB_SYNC_TOKEN=ghp_your_token_here
+GITHUB_SYNC_REPO=your-username/zona-osier-memory
+
+# ============================================
+# ⚠️ PERINGATAN: GitHub Models sudah DIHAPUS (retired 30 Juli 2026).
+# JANGAN menambahkan GITHUB_TOKEN untuk inference.
+# ============================================
+
+# --- Build Configuration ---
+
+# Path ke Android SDK (biasanya otomatis oleh Android Studio)
+# sdk.dir=/path/to/android/sdk
+
+# Path ke NDK (opsional, untuk build native)
+# ndk.dir=/path/to/android/ndk

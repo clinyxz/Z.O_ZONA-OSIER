@@ -1,0 +1,89 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+.navigation/
+captures/
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild/
+.cxx/
+
+# Google Services (usually keep this if using)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Version control
+vcs.xml
+
+# Lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Model assets (too large for git)
+# Uncomment if you don't want to track model files
+# android/app/src/main/assets/vosk-model-id/
+# android/app/src/main/assets/sherpa-onnx-id/
+# android/app/src/main/assets/models/
+
+# sherpa-onnx AAR (download separately)
+android/app/libs/*.aar
+
+# Keystore
+*.jks
+*.keystore
+
+# Log files
+*.log
+
+# Gradle wrapper — keep the placeholder, it's replaced on first build
+# DO NOT ignore gradle-wrapper.jar or gradlew scripts
+!gradle/wrapper/gradle-wrapper.jar
+!gradlew
+!gradlew.bat
+
+# ObjectBox generated files
+objectbox-android/**
