@@ -1,3 +1,4 @@
+import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -15,7 +16,7 @@ plugins {
 val groqApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("GROQ_API_KEY", "")
     } else ""
 }
@@ -23,7 +24,7 @@ val groqApiKey: String by lazy {
 val openrouterApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("OPENROUTER_API_KEY", "")
     } else ""
 }
@@ -31,7 +32,7 @@ val openrouterApiKey: String by lazy {
 val googleAiApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("GOOGLE_AI_API_KEY", "")
     } else ""
 }
@@ -39,7 +40,7 @@ val googleAiApiKey: String by lazy {
 val deepseekApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("DEEPSEEK_API_KEY", "")
     } else ""
 }
@@ -47,7 +48,7 @@ val deepseekApiKey: String by lazy {
 val cerebrasApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("CEREBRAS_API_KEY", "")
     } else ""
 }
@@ -55,7 +56,7 @@ val cerebrasApiKey: String by lazy {
 val sambaNovaApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("SAMBA_NOVA_API_KEY", "")
     } else ""
 }
@@ -63,7 +64,7 @@ val sambaNovaApiKey: String by lazy {
 val novitaApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("NOVITA_API_KEY", "")
     } else ""
 }
@@ -71,7 +72,7 @@ val novitaApiKey: String by lazy {
 val mistralApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("MISTRAL_API_KEY", "")
     } else ""
 }
@@ -79,7 +80,7 @@ val mistralApiKey: String by lazy {
 val cloudflareApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("CLOUDFLARE_API_KEY", "")
     } else ""
 }
@@ -87,7 +88,7 @@ val cloudflareApiKey: String by lazy {
 val cloudflareAccountId: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("CLOUDFLARE_ACCOUNT_ID", "")
     } else ""
 }
@@ -95,7 +96,7 @@ val cloudflareAccountId: String by lazy {
 val cohereApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("COHERE_API_KEY", "")
     } else ""
 }
@@ -103,7 +104,7 @@ val cohereApiKey: String by lazy {
 val huggingfaceApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("HUGGINGFACE_API_KEY", "")
     } else ""
 }
@@ -111,7 +112,7 @@ val huggingfaceApiKey: String by lazy {
 val nvidiaApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("NVIDIA_API_KEY", "")
     } else ""
 }
@@ -119,7 +120,7 @@ val nvidiaApiKey: String by lazy {
 val elevenlabsApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("ELEVENLABS_API_KEY", "")
     } else ""
 }
@@ -127,7 +128,7 @@ val elevenlabsApiKey: String by lazy {
 val minimaxApiKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("MINIMAX_API_KEY", "")
     } else ""
 }
@@ -135,7 +136,7 @@ val minimaxApiKey: String by lazy {
 val picovoiceAccessKey: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("PICOVOICE_ACCESS_KEY", "")
     } else ""
 }
@@ -143,7 +144,7 @@ val picovoiceAccessKey: String by lazy {
 val githubSyncToken: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("GITHUB_SYNC_TOKEN", "")
     } else ""
 }
@@ -151,7 +152,7 @@ val githubSyncToken: String by lazy {
 val githubSyncRepo: String by lazy {
     val props = rootProject.file("local.properties")
     if (props.exists()) {
-        val p = java.util.Properties(); props.inputStream().use { p.load(it) }
+        val p = Properties(); p.load(props.inputStream())
         p.getProperty("GITHUB_SYNC_REPO", "")
     } else ""
 }
