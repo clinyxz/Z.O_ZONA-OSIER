@@ -39,7 +39,7 @@ health-connect = "1.1.0"
 
 # --- Camera + ML Kit ---
 camera = "1.4.0"
-mlkit-face = "17.1.0"
+mlkit-face = "16.1.7"
 
 # --- Network ---
 okhttp = "4.12.0"
@@ -47,7 +47,7 @@ retrofit = "2.11.0"
 retrofit-kotlinx = "1.0.0"
 
 # --- Git (GitHub-as-Cloud) ---
-jgit = "7.1.0"
+jgit = "7.1.0.202411261347-r"
 
 # --- JSON ---
 gson = "2.11.0"
@@ -113,7 +113,7 @@ shizuku-provider = { group = "dev.rikka.shizuku", name = "provider", version.ref
 # --- Voice ---
 android-vad = { group = "com.github.gkonovalov.android-vad", name = "silero", version.ref = "android-vad" }
 vosk-android = { group = "com.alphacephei", name = "vosk-android", version.ref = "vosk" }
-picovoice-eagle = { group = "ai.picovoice", name = "eagle", version.ref = "picovoice-eagle" }
+picovoice-eagle = { group = "ai.picovoice", name = "eagle-android", version.ref = "picovoice-eagle" }
 
 # --- ObjectBox (Vector DB) ---
 objectbox-android = { group = "io.objectbox", name = "objectbox-android", version.ref = "objectbox" }
