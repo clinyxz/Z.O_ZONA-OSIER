@@ -20,6 +20,7 @@ jobs:
       - run: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
           echo "GROQ_API_KEY=test" >> local.properties
+      - run: gradle wrapper --gradle-version 8.11.1
       - run: chmod +x gradlew
       - run: ./gradlew :android:app:assembleDebug --stacktrace
       - uses: actions/upload-artifact@v4
