@@ -110,4 +110,5 @@
     <string name="error_shell_rejected">Perintah shell ditolak: %1$s</string>
     <string name="error_biometric_failed">Verifikasi biometrik gagal atau dibatalkan.</string>
     <string name="error_frozen">Agent dalam keadaan dibekukan. Unfreeze terlebih dahulu.</string>
-</resources><string name="accessibility_service_description">ZONA-OSIER membaca layar dan mengeksekusi gesture atas perintah suara Anda.</string>
+    <string name="accessibility_service_description">ZONA-OSIER membaca layar dan mengeksekusi gesture atas perintah suara Anda.</string>
+</resources>
