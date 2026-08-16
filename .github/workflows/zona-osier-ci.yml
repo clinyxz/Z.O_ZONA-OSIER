@@ -1,0 +1,28 @@
+name: ZONA-OSIER CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+      - uses: android-actions/setup-android@v3
+      - run: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+          echo "GROQ_API_KEY=test" >> local.properties
+      - run: chmod +x gradlew
+      - run: ./gradlew :android:app:assembleDebug --stacktrace
+      - uses: actions/upload-artifact@v4
+        with:
+          name: debug-apk
+          path: android/app/build/outputs/apk/debug/*.apk
