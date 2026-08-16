@@ -80,10 +80,9 @@ android/app/libs/*.aar
 *.log
 
 # Gradle wrapper — keep the placeholder, it's replaced on first build
-# DO NOT ignore gradle-wrapper.jar or gradlew scripts
-!gradle/wrapper/gradle-wrapper.jar
 !gradlew
 !gradlew.bat
 
 # ObjectBox generated files
 objectbox-android/**
+!gradle/wrapper/gradle-wrapper.jar
